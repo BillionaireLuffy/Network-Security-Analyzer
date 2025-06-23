@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌐 Network Security Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container">
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-shield-alt"></i>
+          <h1>Network Security Analyzer</h1>
+        </div>
+        <nav class="nav">
+          <a href="profile.html" class="nav-link">
+            <i class="fas fa-user"></i>
+            Profile
+          </a>
+          <button onclick="logout()" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="hero-section">
+        <div class="hero-content">
+          <h2 class="hero-title">Advanced Network Security Scanner</h2>
+          <p class="hero-subtitle">Comprehensive security analysis for your web applications</p>
+        </div>
+      </div>
+
+      <div class="scan-section">
+        <div class="scan-container">
+          <div class="scan-header">
+            <h3><i class="fas fa-search"></i> Scan Website</h3>
+            <p>Enter a domain to perform comprehensive security analysis</p>
+          </div>
+          
+          <div class="input-section">
+            <div class="input-wrapper">
+              <i class="fas fa-globe input-icon"></i>
+              <input 
+                type="text" 
+                id="urlInput" 
+                placeholder="Enter domain (e.g., example.com)"
+                class="url-input"
+              >
+              <button onclick="startScan()" class="scan-btn" id="scanBtn">
+                <i class="fas fa-search"></i>
+                <span>Scan Now</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="loader" class="loader-container hidden">
+            <div class="loader"></div>
+            <p>Analyzing security features...</p>
+          </div>
+
+          <div id="score" class="score-container hidden"></div>
+          <div id="results" class="results-container"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

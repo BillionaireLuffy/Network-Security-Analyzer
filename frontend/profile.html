@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👤 Profile - NetSecAnalyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container">
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-shield-alt"></i>
+          <h1>NetSecAnalyzer</h1>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            Dashboard
+          </a>
+          <button onclick="logout()" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content profile-content">
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-info">
+          <h2 id="userName">Loading...</h2>
+          <p id="userEmail">Loading...</p>
+          <span class="role-badge" id="userRole">Loading...</span>
+        </div>
+      </div>
+
+      <div class="profile-sections">
+        <div class="profile-section">
+          <div class="section-header">
+            <h3><i class="fas fa-user-cog"></i> Account Information</h3>
+          </div>
+          <div class="info-grid">
+            <div class="info-item">
+              <label>Full Name</label>
+              <span id="displayName">Loading...</span>
+            </div>
+            <div class="info-item">
+              <label>Email Address</label>
+              <span id="displayEmail">Loading...</span>
+            </div>
+            <div class="info-item">
+              <label>Role</label>
+              <span id="displayRole">Loading...</span>
+            </div>
+            <div class="info-item">
+              <label>Member Since</label>
+              <span id="memberSince">Loading...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-section">
+          <div class="section-header">
+            <h3><i class="fas fa-history"></i> Scan History</h3>
+            <div class="filter-controls">
+              <label for="sortBy">Sort by:</label>
+              <select id="sortBy" onchange="fetchScans()" class="filter-select">
+                <option value="scan_date DESC">Date (Newest First)</option>
+                <option value="scan_date ASC">Date (Oldest First)</option>
+                <option value="score DESC">Score (High to Low)</option>
+                <option value="score ASC">Score (Low to High)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div id="scanHistory" class="scan-history">
+            <div class="loading-scans">
+              <div class="loader"></div>
+              <p>Loading scan history...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
